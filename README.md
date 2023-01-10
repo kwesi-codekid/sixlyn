@@ -68,6 +68,8 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 |            |—— Welcome.jsx
 ```
 
+### Whole Project Structure
+
 ```
 |—— app
 |    |—— Http
