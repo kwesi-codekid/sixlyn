@@ -14,7 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id');
+
+            $table->float('amount', 8, 2);
+            $table->string('payment_method');
+            $table->string('transaction_id')->nullable();
+            $table->string('payment_status');
+            $table->date('payment_date');
+            $table->text('note')->nullable();
+
+            $table->foreignUuid('customer_id')->nullable();
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

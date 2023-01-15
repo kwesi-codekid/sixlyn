@@ -13,13 +13,23 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $proucts = Product::get();
+        // http://yourdomain.com/products?search=samsung&sort=price-desc
+        $products = Product::query()
+            ->when(request()->filled('search'), function ($query) {
+                $query->where('name', 'like', "%{request()->search}%");
+            })
+            ->when(request()->filled('sort'), function ($query) {
+                $sort = explode('-', request()->sort);
+                $query->orderBy($sort[0], $sort[1]);
+            })
+            ->paginate(10);
+
         $data = [
-            'products' => $proucts,
+            'products' => $products,
         ];
-        return Inertia::render('Welcome', $data);
+        return Inertia::render('Home', $data);
     }
 
     /**

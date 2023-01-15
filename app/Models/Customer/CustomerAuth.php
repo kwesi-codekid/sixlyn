@@ -1,26 +1,21 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Customer;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Payment extends Model
+class CustomerAuth extends Model
 {
     use HasFactory;
     use HasUuids;
 
 
-    // payment fillable
+    // customer fillable
     protected $fillable = [
         'user_id',
-        'order_id',
-        'payment_method',
-        'payment_status',
-        'payment_id',
-        'amount',
-        'payment_currency',
-        'payment_response',
+        'customer_id',
+        'customer_name',
     ];
 }
