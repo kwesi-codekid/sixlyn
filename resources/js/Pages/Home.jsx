@@ -8,12 +8,16 @@ import {
 } from "react-icons/fa";
 import Footer from "../Components/Footer";
 import ProductCard from "../Components/ProductCard";
+import PublicNavbar from "../Components/PublicNavbar";
 import giftBasket from "../images/gift-basket.png";
 
 export default function Welcome(props) {
     return (
         <div className="bg-white">
             <Head title="Welcome to Sixlyn" />
+
+            {/* Navbar */}
+            <PublicNavbar />
 
             {/* Header */}
             <div className="landing h-[85%] flex flex-col-reverse items-center  !bg-no-repeat !bg-fixed !bg-cover md:flex-row p-5">
