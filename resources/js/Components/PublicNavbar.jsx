@@ -45,12 +45,14 @@ const MyNavbar = () => {
                                     </Link>
                                     <Link
                                         href={route("about")}
+
                                         className="py-4 px-2 text-slate-600 font-semibold hover:text-green-500 transition duration-300"
                                     >
                                         About Us
                                     </Link>
                                     <Link
                                         href={route("contact")}
+
                                         className="py-4 px-2 text-slate-600 font-semibold hover:text-green-500 transition duration-300"
                                     >
                                         Contact Us
@@ -74,6 +76,7 @@ const MyNavbar = () => {
                                         className="bg-transparent"
                                         shape="square"
                                     />
+
                                 </Badge>
 
                                 <Link>My Account</Link>
@@ -123,6 +126,7 @@ const MyNavbar = () => {
                         <li>
                             <Link
                                 href={route("about")}
+
                                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
                             >
                                 About
@@ -131,6 +135,7 @@ const MyNavbar = () => {
                         <li>
                             <Link
                                 href={route("contact")}
+
                                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
                             >
                                 Contact Us
