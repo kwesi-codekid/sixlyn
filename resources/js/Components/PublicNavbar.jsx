@@ -44,13 +44,13 @@ const MyNavbar = () => {
                                         Shop
                                     </Link>
                                     <Link
-                                        href=""
+                                        href={route("about")}
                                         className="py-4 px-2 text-slate-600 font-semibold hover:text-green-500 transition duration-300"
                                     >
                                         About Us
                                     </Link>
                                     <Link
-                                        href="/contact"
+                                        href={route("contact")}
                                         className="py-4 px-2 text-slate-600 font-semibold hover:text-green-500 transition duration-300"
                                     >
                                         Contact Us
@@ -60,8 +60,20 @@ const MyNavbar = () => {
 
                             {/* <!-- Secondary Navbar items --> */}
                             <div className="hidden md:flex items-center space-x-8">
-                                <Badge size="small" className="font-poppins" count={3} offset={[-5, 10]} showZero>
-                                    <Avatar icon={<ShoppingOutlined className="text-slate-700 text-2xl" />} className='bg-transparent'  shape="square" />
+                                <Badge
+                                    size="small"
+                                    className="font-poppins"
+                                    count={3}
+                                    offset={[-5, 10]}
+                                    showZero
+                                >
+                                    <Avatar
+                                        icon={
+                                            <ShoppingOutlined className="text-slate-700 text-2xl" />
+                                        }
+                                        className="bg-transparent"
+                                        shape="square"
+                                    />
                                 </Badge>
 
                                 <Link>My Account</Link>
@@ -110,7 +122,7 @@ const MyNavbar = () => {
                         </li>
                         <li>
                             <Link
-                                href="#about"
+                                href={route("about")}
                                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
                             >
                                 About
@@ -118,7 +130,7 @@ const MyNavbar = () => {
                         </li>
                         <li>
                             <Link
-                                href="#contact"
+                                href={route("contact")}
                                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
                             >
                                 Contact Us

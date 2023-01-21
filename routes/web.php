@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 // public routes group
 Route::middleware([])->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('products.index');
@@ -58,5 +59,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::patch('/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 });
+
+Route::get('/contact', function () {
+    return Inertia::render('Contact');
+})->name('contact');
+
+Route::get('/about', function () {
+    return Inertia::render('About');
+})->name('about');
+
 
 require __DIR__ . '/auth.php';
