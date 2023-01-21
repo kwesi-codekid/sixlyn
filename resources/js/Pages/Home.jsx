@@ -10,7 +10,8 @@ import Footer from "../Components/Footer";
 import ProductCard from "../Components/ProductCard";
 import giftBasket from "../images/gift-basket.png";
 
-export default function Welcome(props) {
+export default function Home({ products, auth }) {
+    console.log(products);
     return (
         <div className="bg-white">
             <Head title="Welcome to Sixlyn" />
@@ -144,11 +145,11 @@ export default function Welcome(props) {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-10">
                     <Fade>
-                        {[1, 2, 3, 4, 5, 6].map((idc) => (
+                        {products?.map((product) => (
                             <ProductCard
-                                key={idc}
-                                name={"Hennessey VSOP"}
-                                price="$995.00"
+                                key={product?.id}
+                                name={product?.name}
+                                price={`$${product?.price}`}
                             />
                         ))}
                     </Fade>

@@ -24,7 +24,8 @@ class ProductController extends Controller
                 $sort = explode('-', request()->sort);
                 $query->orderBy($sort[0], $sort[1]);
             })
-            ->paginate(10);
+            ->take(8)
+            ->get();
 
         $data = [
             'products' => $products,

@@ -14,7 +14,14 @@ class Product extends Model
 
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'slug',
+        'description',
+        'image',
+        'price',
+        'stock',
+        'status',
+        'featured',
+        'quantity',
+        'category_id',
     ];
 }
