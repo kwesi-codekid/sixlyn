@@ -13,9 +13,15 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                poppins: ['Poppins', 'sans-serif'],
+                quicksand: ['Quicksand'],
             },
+            backgroundImage: {
+                "blurredlights": "url('../js/images/blurred-lightbulb.jpg')"
+            }
         },
     },
 
     plugins: [require('@tailwindcss/forms')],
 };
+

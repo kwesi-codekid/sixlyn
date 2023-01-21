@@ -18,7 +18,7 @@ use Inertia\Inertia;
 */
 
 // Route::get('/', function () {
-//     return Inertia::render('Welcome', [
+//     return Inertia::render('Home', [
 //         'canLogin' => Route::has('login'),
 //         'canRegister' => Route::has('register'),
 //         'laravelVersion' => Application::VERSION,
@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // public routes group
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware([])->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('products.index');
     Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
     Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
